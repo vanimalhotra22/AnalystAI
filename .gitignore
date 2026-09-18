@@ -1,0 +1,20 @@
+# python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# data (regenerate with: python -m app.data.generate)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# node
+node_modules/
+frontend/dist/
+
+# env & editors
+.env
+.DS_Store
+.idea/
+.vscode/

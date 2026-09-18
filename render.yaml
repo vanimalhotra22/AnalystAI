@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: insightpilot-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt && cd backend && python -m app.data.generate
+    startCommand: cd backend && uvicorn app.api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: COOKIE_SAMESITE
+        value: "none"
+      - key: DEMO_ACCOUNT_ENABLED
+        value: "true"
+      - key: CORS_ORIGINS
+        value: ""

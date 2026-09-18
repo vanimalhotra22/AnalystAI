@@ -1,0 +1,33 @@
+# InsightPilot backend — pinned to the versions this POC was built and tested on
+# (Python 3.14, Windows; nothing here is platform specific).
+
+# --- data layer -------------------------------------------------------------
+SQLAlchemy==2.0.52
+pandas==3.0.5
+numpy==2.5.2
+scipy==1.18.1
+scikit-learn==1.9.0
+# Uncomment to run against PostgreSQL instead of the default SQLite file:
+# psycopg[binary]==3.2.3
+
+# --- API --------------------------------------------------------------------
+fastapi==0.141.1
+uvicorn[standard]==0.52.4
+pydantic==2.13.4
+pydantic-settings==2.15.0
+sse-starlette==3.4.8
+python-dotenv==1.2.3
+
+# --- auth -------------------------------------------------------------------
+PyJWT==2.13.0          # session tokens; password hashing uses stdlib scrypt
+
+# --- agent orchestration ----------------------------------------------------
+langgraph==1.2.11
+langchain-core==1.6.0
+
+# --- LLM providers (all optional; the app runs without any of them) ---------
+anthropic==1.0.0
+httpx==0.28.1          # used for the OpenAI and Gemini adapters
+
+# --- dev --------------------------------------------------------------------
+pytest==9.1.1
